@@ -10,14 +10,16 @@
 
 using namespace std;
 
+int global = 0;
+
 void ImprimirAsteriscos(int iNum){
     if(iNum > 0){
         for(int i = 0; i < iNum; i++)
             cout << "*";
-            
+        
         cout << endl;
         ImprimirAsteriscos(iNum - 1);
-    }else if(iNum <= 0 ){
+    }else if(iNum <= 0 && iNum > global *(-1)){
         for(int i = iNum; i <= 0; i++)
             cout << "*";
         
@@ -25,13 +27,12 @@ void ImprimirAsteriscos(int iNum){
         ImprimirAsteriscos(iNum - 1);
     }
 }
-//ahora como me salgo del loop 
 
 int main(){
     
     int iNum;
     cin >> iNum;
-    
+    global = iNum;
     ImprimirAsteriscos(iNum);
 
     return 0;
