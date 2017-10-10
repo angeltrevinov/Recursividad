@@ -28,12 +28,26 @@ void ImprimirAsteriscos(int iNum){
     }
 }
 
+void Alrevez(int iNum){
+    if(iNum / 10 > 0){
+        global = (iNum % 10);
+        cout << global;
+        iNum = iNum / 10;
+        Alrevez(iNum);
+    }else if(iNum <10){
+         cout << iNum;
+    }
+}
+
 int main(){
     
     int iNum;
     cin >> iNum;
-    global = iNum;
-    ImprimirAsteriscos(iNum);
+    //global = iNum;
+    //ImprimirAsteriscos(iNum);
+    cout << endl;
+    Alrevez(iNum);
+    cout << endl;
 
     return 0;
 }
